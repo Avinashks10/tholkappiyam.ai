@@ -110,19 +110,6 @@ img {
     width: 17%;
     height: auto;
 }
-@media (max-width: 768px) {
-  body {
-    background-image: url('Tholkappiyar_image.png');
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    opacity: 0.05; /* optional fade */
-  }
-
-  .img {
-    display: none;
-  }
-}
 
 .nav-link {
   text-decoration: none;
