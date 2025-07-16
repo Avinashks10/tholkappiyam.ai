@@ -1,3 +1,23 @@
+document.oncontextmenu = () => false;
+document.onkeydown = (e) => {
+  if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+    e.preventDefault();
+    alert("Inspect Element is disabled for this page.");
+  }
+  if(e.ctrlKey && e.key === "u") {
+    e.preventDefault();
+    alert("Viewing source code is disabled for this page.");
+  }
+  if (e.ctrlKey && e.key === "c") {
+    e.preventDefault();
+    alert("Copying content is disabled for this page.");
+  }
+  if (e.ctrlKey && e.key === "v") {
+    e.preventDefault();
+    alert("Pasting content is disabled for this page.");
+  }
+}
+
 function sendMessage() {
   const userInput = document.getElementById("userInput").value;
   if (!userInput) return;
