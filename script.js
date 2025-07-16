@@ -1,17 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  background-color: #fff; /* or your background */
-  border: none;
-  overflow-x: hidden; /* prevents sideways scroll */
-}
-
 document.oncontextmenu = () => false;
 document.onkeydown = (e) => {
   if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
@@ -33,328 +19,115 @@ document.onkeydown = (e) => {
 }
 
 
-* {
-  font-family: 'Poppins', sans-serif;
-}
-body {
-  background: linear-gradient(135deg, #fbf9f9, #fcfbfb);
-  color: #403e3e;
-  font-family: 'Poppins', sans-serif;
-}
-nav {
-  background-color: rgb(37, 36, 36);
-  height: 62px;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+function sendMessage() {
+  const userInput = document.getElementById("userInput").value;
+  if (!userInput) return;
+
+  appendMessage("You", userInput);
+  fetchAnswer(userInput);
+  document.getElementById("userInput").value = "";
 }
 
-.logo {
-    display: flex;
-  font-size: 20px;
-    align-items: center;
-}
-.logo img {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-  display: flex;
-    align-items: center;
+function autoAsk(question) {
+  document.getElementById("userInput").value = question;
+  sendMessage();
 }
 
-.nav-links a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: black;
+function appendMessage(sender, message) {
+  const chatbox = document.getElementById("chatbox");
+  const msgDiv = document.createElement("div");
+  msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatbox.appendChild(msgDiv);
 }
 
-main {
-  text-align: center;
-  padding: 40px 20px;
-  background: url('https://www.transparenttextures.com/patterns/checkered-pattern.png') repeat;
-  min-height: 100vh;
+function fetchAnswer(question) {
+  
+  setTimeout(() => {
+    appendMessage("Tholkappiyam AI", "This is an explanation based on Tholkappiyam for your query: \"" + question + "\".");
+  }, 1000);
 }
-.welcome-text {
-  font-size: 20px;
-  margin-bottom: 30px;
+function sendMessage() {
+  const userInput = document.getElementById("userInput").value;
+  if (!userInput) return;
+
+  appendMessage("You", userInput);
+  fetchGPTAnswer(userInput);
+  document.getElementById("userInput").value = "";
 }
 
-.chat-area {
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+function autoAsk(question) {
+  document.getElementById("userInput").value = question;
+  sendMessage();
 }
 
-.chat-area input {
-  width: 50%;
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
+function appendMessage(sender, message) {
+  const chatbox = document.getElementById("chatbox");
+  const msgDiv = document.createElement("div");
+  msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatbox.appendChild(msgDiv);
 }
 
-.chat-area button {
-  padding: 10px 15px;
-  border-radius: 50%;
-  background: #007bff;
-  color: white;
-    font-size: 18px;
-  border: none;
-  cursor: pointer;
-}
+async function fetchGPTAnswer(question) {
+  appendMessage("Tholkappiyam AI", "Typing...");
 
-.suggestions {
-  margin-top: 20px;
-}
+  try {
+    const response = await fetch("http://localhost:3000/ask", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ question })
+    });
 
-.suggestions button {
-  margin: 5px;
-  padding: 10px 15px;
-  border-radius: 15px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-#chatbox {
-  margin-top: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-    width: 17%;
-    height: auto;
-}
-@media (max-width: 768px) {
-  body {
-    background-image: url('Tholkappiyar_image.png');
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    opacity: 0.05; /* optional fade */
-  }
-
-  .img {
-    display: none;
+    const data = await response.json();
+    appendMessage("Tholkappiyam AI", data.answer);
+  } catch (error) {
+    console.error(error);
+    appendMessage("Tholkappiyam AI", "Sorry, something went wrong while fetching the answer.");
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const inputField = document.getElementById("userInput");
+  const sendBtn = document.getElementById("sendBtn");
+  const chatbox = document.getElementById("chatbox");
 
-.nav-link {
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  margin: 0 15px;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: rgb(2, 2, 152); /* text color on hover */
-}
-
-.nav-link:hover::after {
-  width: 100%; /* underline expands on hover */
-}
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-/* Transparent Navbar */
-.navbar {
-  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent black */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Nav links for dark mode */
-.navbar a {
-  color: #272525;
-  text-decoration: none;
-  margin-left: 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* Hover effect */
-.navbar a:hover {
-  transform: scale(1.1);
-  color: #002057; /* cyan glow or any bright color */
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-
-}
-
-.hamburger {
-  color: #000;
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    display: none;
-    width: 100%;
-    margin-top: 1rem;
+  function appendMessage(sender, text) {
+    const msgDiv = document.createElement("div");
+    msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatbox.appendChild(msgDiv);
+    chatbox.scrollTop = chatbox.scrollHeight;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
+  sendBtn.addEventListener("click", () => {
+    const question = inputField.value.trim();
+    if (!question) return;
 
-  .hamburger {
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  .main-container {
-    flex-direction: column;
-    padding: 1rem;
-  }
+    appendMessage("You", question);
+    inputField.value = "";
 
-  .chatbox {
-    height: 60vh;
-    font-size: 1rem;
-  }
+    fetch("/ask", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ question }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        appendMessage("Tholkappiyam AI", data.answer || "No response.");
+      })
+      .catch(err => {
+        appendMessage("Tholkappiyam AI", "❌ Server error.");
+        console.error(err);
+      });
+  });
 
-  .input-container input {
-    width: 100%;
-    font-size: 1rem;
-  }
-}
-.nav-link {
-  transition: transform 0.2s ease, color 0.2s ease;
-}
+  // Also trigger send on pressing Enter
+  inputField.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendBtn.click();
+    }
+  });
+});
 
-.nav-link:hover {
-  transform: scale(1.1);
-  color: #007bff; /* optional: change color on hover */
-}
-button,
-.body-button,
-.prompt-button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-button:hover,
-.body-button:hover,
-.prompt-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-a,
-input[type="submit"] {
-  transition: all 0.2s ease-in-out;
-}
-
-a:hover,
-input[type="submit"]:hover {
-  transform: scale(1.05);
-}
-
-footer {
-    display: block;
-    unicode-bidi: isolate;
-    text-align: center;
-    padding: 1rem;
-}
-/* Chatbox container */
-#chatbox {
-  background-color: rgba(0, 0, 0, 0.5); /* translucent dark background */
-  backdrop-filter: brightness(0.8);
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 800px;
-  height: auto;
-  max-height: 400px;
-  overflow-y: auto;
-  box-shadow: 0 0 12px rgba(230, 223, 223, 0.05);
-  color: #faf8f8;
-}
-
-/* Individual chat messages */
-#chatbox div {
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Your message */
-#chatbox div:nth-child(odd) {
-  background-color: rgba(255, 255, 255, 0.05);
-  text-align: right;
-}
-
-/* AI message */
-#chatbox div:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.08);
-  text-align: left;
-}
-
-/* Scrollbar styling for dark chatbox */
-#chatbox::-webkit-scrollbar {
-  width: 6px;
-}
-#chatbox::-webkit-scrollbar-thumb {
-  background: grey;
-  border-radius: 3px;
-}
-#chatbox::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-
-#userInput {
-  background-color: rgba(57, 56, 56, 0.08);
-  border: 1px solid rgba(4, 4, 4, 0.2);
-  color: #353434;
-  padding: 12px;
-  border-radius: 10px;
-  width: 70%;
-}
-
-#userInput::placeholder {
-  color: #2a2929;
-}
-
-.send-button {
-  background-color: #00b894;
-  border: none;
-  padding: 12px;
-  border-radius: 50%;
-  color: black;
-  margin-left: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.send-button:hover {
-  transform: scale(1.1);
-  background-color: #019875;
-}
 
