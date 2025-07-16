@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tholkappiyam AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo"> 
+    <img src="logoTholkappiyam.png" alt="Tholkappiyam.ai Logo" width="200" height="40" loading="eager" class="d-inline-block align-text-top">
+    Tholkappiyam. <span>Ai</span>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="#ask" class="nav-link">Ask your question</a>
+    <a href="#textlist" class="nav-link">Text list</a>
+    <a href="#about" class="nav-link">About us</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+  <main>
+    <img src="Tholkappiyar_image.png" alt=""><br>Hi , How can I help you ?</div>
+    <div class="background-image"></div>
+
+    <div class="chat-area">
+      <input type="text" placeholder="Ask your question" id="userInput" type="text" />
+      <button id="sendBtn" class="send-button">
+  <i class="fas fa-paper-plane"></i>
+</button>
+
+
+    </div>
+
+    <div class="suggestions">
+      <button onclick="autoAsk('What is Tholkappiyam\'s view on grammar and language structure?')">What is Tholkappiyam's view on grammar and language structure?</button>
+      <button onclick="autoAsk('How does Tholkappiyam define good speech or communication?')">How does Tholkappiyam define good speech or communication?</button>
+      <button onclick="autoAsk('What cultural values are described in Tholkappiyam?')">What cultural values are described in Tholkappiyam?</button>
+      <button onclick="autoAsk('Can you explain the structure of Tholkappiyam text?')">Can you explain the structure of Tholkappiyam text?</button>
+    </div>
+
+    <div id="chatbox"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+    <footer>
+        <p>© 2025 Tholkappiyam AI. All rights reserved.</p>
+        <p>Developed by Avinash</p>
+    </footer>
+</body>
+</html>
