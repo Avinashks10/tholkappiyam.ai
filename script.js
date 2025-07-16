@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* or your background */
+  border: none;
+  overflow-x: hidden; /* prevents sideways scroll */
+}
+
 document.oncontextmenu = () => false;
 document.onkeydown = (e) => {
   if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
@@ -16,20 +30,6 @@ document.onkeydown = (e) => {
     e.preventDefault();
     alert("Pasting content is disabled for this page.");
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  background-color: #fff; /* or your background */
-  border: none;
-  overflow-x: hidden; /* prevents sideways scroll */
 }
 
 
