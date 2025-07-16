@@ -1,4 +1,19 @@
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* or your background */
+  border: none;
+  overflow-x: hidden; /* prevents sideways scroll */
+}
+
+
+* {
   font-family: 'Poppins', sans-serif;
 }
 body {
@@ -92,9 +107,23 @@ main {
 img {
     overflow-clip-margin: content-box;
     overflow: clip;
-    width: 15%;
+    width: 17%;
     height: auto;
 }
+@media (max-width: 768px) {
+  body {
+    background-image: url('Tholkappiyar_image.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    opacity: 0.05; /* optional fade */
+  }
+
+  .img {
+    display: none;
+  }
+}
+
 .nav-link {
   text-decoration: none;
   color: #000;
