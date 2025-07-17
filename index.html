@@ -21,7 +21,12 @@
     <a href="textlist.html" class="nav-link">Text list</a>
     <a href="about.html" class="nav-link">About us</a>
   </div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+</header>
 </nav>
 
 
@@ -54,7 +59,7 @@
     document.getElementById("navLinks").classList.toggle("active");
   }
 </script>
-  <script>
+<script>
   document.getElementById('askArea').addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default anchor jump
     const input = document.getElementById('userInput');
@@ -66,6 +71,16 @@
     }, 600); // Delay to allow scroll to finish
   });
 </script>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+
+
     <footer>
         <p>© 2025 Tholkappiyam AI. All rights reserved.</p>
         <p>Developed by Avinash</p>
