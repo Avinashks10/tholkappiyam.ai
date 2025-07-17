@@ -1,83 +1,107 @@
 <!-- File: about.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Tholkappiyam AI</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: background: url("https://www.transparenttextures.com/patterns/checkered-pattern.png")
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Tholkappiyam AI</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "poppins", sans-serif;
+        background: url("https://www.transparenttextures.com/patterns/checkered-pattern.png")
           repeat;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(to right, #8e44ad, #3498db);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .content {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-  <div class="logo"> 
-    <img src="logoTholkappiyam.png" alt="Tholkappiyam.ai Logo" width="200" height="40" loading="eager" class="d-inline-block align-text-top">
-    Tholkappiyam. <span>Ai</span>
-  </div>
-  <div class="nav-links" id="navLinks">
-    <a href="index.html" id="askArea" class="nav-link">Ask your question</a>
-    <a href="textlist.html" class="nav-link">Text list</a>
-    <a href="about.html" class="nav-link">About us</a>
-  </div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</nav>
+        color: #333;
+      }
+      header {
+        background: linear-gradient(to right, #8e44ad, #3498db);
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      main {
+        text-align: center;
+        padding: 40px 20px;
+        background: url("https://www.transparenttextures.com/patterns/checkered-pattern.png")
+          repeat;
+        min-height: 100vh;
+      }
+      nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .content {
+        max-width: 800px;
+        margin: auto;
+        padding: 2rem;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="logoTholkappiyam.png"
+          alt="Tholkappiyam.ai Logo"
+          width="200"
+          height="40"
+          loading="eager"
+          class="d-inline-block align-text-top"
+        />
+        Tholkappiyam. <span>Ai</span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" id="askArea" class="nav-link">Ask your question</a>
+        <a href="textlist.html" class="nav-link">Text list</a>
+        <a href="about.html" class="nav-link">About us</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
 
-  <div class="content">
-    <h1>About Tholkappiyam AI</h1>
-    <p>
-      Tholkappiyam AI is an initiative to modernize the study and exploration of ancient Tamil grammar through AI-powered search and interaction.
-    </p>
-    <p>
-      This project was started by Avinash K S to combine the timeless knowledge of Tholkappiyam with modern design and usability.
-    </p>
-    <p>
-      We are continuously working to enhance features and make it a complete AI companion for Tamil literature enthusiasts.
-    </p>
-  </div>
-  <script src="script.js"></script>
+    <div class="content">
+      <h1>About Tholkappiyam AI</h1>
+      <p>
+        Tholkappiyam AI is an initiative to modernize the study and exploration
+        of ancient Tamil grammar through AI-powered search and interaction.
+      </p>
+      <p>
+        This project was started by Avinash K S to combine the timeless
+        knowledge of Tholkappiyam with modern design and usability.
+      </p>
+      <p>
+        We are continuously working to enhance features and make it a complete
+        AI companion for Tamil literature enthusiasts.
+      </p>
+    </div>
+    <script src="script.js"></script>
     <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-</script>
-</body>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+      }
+    </script>
+  </body>
 </html>
+
