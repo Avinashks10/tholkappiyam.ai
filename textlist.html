@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- File: textlist.html -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -77,7 +76,11 @@
         <a href="textlist.html" class="nav-link">Text list</a>
         <a href="about.html" class="nav-link">About us</a>
       </div>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
+       <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
     </nav>
 
     <div class="container">
@@ -94,5 +97,13 @@
         document.getElementById("navLinks").classList.toggle("active");
       }
     </script>
+    <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
   </body>
 </html>
