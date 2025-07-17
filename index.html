@@ -54,6 +54,18 @@
     document.getElementById("navLinks").classList.toggle("active");
   }
 </script>
+  <script>
+  document.getElementById('navLinks').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default anchor jump
+    const input = document.getElementById('userInput');
+
+    // Scroll and focus
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      input.focus(); // Make cursor blink
+    }, 600); // Delay to allow scroll to finish
+  });
+</script>
     <footer>
         <p>© 2025 Tholkappiyam AI. All rights reserved.</p>
         <p>Developed by Avinash</p>
