@@ -75,10 +75,23 @@
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("navLinks");
 
-  hamburger.addEventListener("click", () => {
+  // Toggle menu on hamburger click
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevent immediate closing when clicked
     navLinks.classList.toggle("show");
   });
+
+  // Close menu if clicked outside
+  document.addEventListener("click", function (event) {
+    const isClickInsideMenu = navLinks.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnHamburger) {
+      navLinks.classList.remove("show");
+    }
+  });
 </script>
+
 
 
     <footer>
