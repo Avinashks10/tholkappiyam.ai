@@ -1,85 +1,98 @@
 <!DOCTYPE html>
 <!-- File: textlist.html -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Text List - Tholkappiyam AI</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: background: url("https://www.transparenttextures.com/patterns/checkered-pattern.png")
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text List - Tholkappiyam AI</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: url("https://www.transparenttextures.com/patterns/checkered-pattern.png")
           repeat;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(to right, #8e44ad, #3498db);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .container {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      font-size: 2.2rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #fff;
-      margin: 10px 0;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-  <div class="logo"> 
-    <img src="logoTholkappiyam.png" alt="Tholkappiyam.ai Logo" width="200" height="40" loading="eager" class="d-inline-block align-text-top">
-    Tholkappiyam. <span>Ai</span>
-  </div>
-  <div class="nav-links" id="navLinks">
-    <a href="index.html" id="askArea" class="nav-link">Ask your question</a>
-    <a href="textlist.html" class="nav-link">Text list</a>
-    <a href="about.html" class="nav-link">About us</a>
-  </div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</nav>
+        color: #333;
+      }
+      header {
+        background: linear-gradient(to right, #8e44ad, #3498db);
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .container {
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      h1 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background: #fff;
+        margin: 10px 0;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="logoTholkappiyam.png"
+          alt="Tholkappiyam.ai Logo"
+          width="200"
+          height="40"
+          loading="eager"
+          class="d-inline-block align-text-top"
+        />
+        Tholkappiyam. <span>Ai</span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" id="askArea" class="nav-link">Ask your question</a>
+        <a href="textlist.html" class="nav-link">Text list</a>
+        <a href="about.html" class="nav-link">About us</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
 
-  <div class="container">
-    <h1>📚 Tholkappiyam Text List</h1>
-    <ul>
-      <li>எழுத்ததிகாரம் (Ezuththathikaaram)</li>
-      <li>சொலதிகாரம் (Sollathikaaram)</li>
-      <li>யாப்பதிகாரம் (Yaappathikaaram)</li>
-    </ul>
-  </div>
+    <div class="container">
+      <h1>📚 Tholkappiyam Text List</h1>
+      <ul>
+        <li>எழுத்ததிகாரம் (Ezuththathikaaram)</li>
+        <li>சொலதிகாரம் (Sollathikaaram)</li>
+        <li>யாப்பதிகாரம் (Yaappathikaaram)</li>
+      </ul>
+    </div>
     <script src="script.js"></script>
     <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-</script>
-</body>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+      }
+    </script>
+  </body>
 </html>
