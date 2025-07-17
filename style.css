@@ -325,6 +325,11 @@ footer {
   background-color: #019875;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 
 
