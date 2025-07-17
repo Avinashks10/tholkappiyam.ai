@@ -17,7 +17,7 @@
     Tholkappiyam. <span>Ai</span>
   </div>
   <div class="nav-links" id="navLinks">
-    <a href="#ask" class="nav-link">Ask your question</a>
+    <a href="#ask" id="askArea" class="nav-link">Ask your question</a>
     <a href="#textlist" class="nav-link">Text list</a>
     <a href="#about" class="nav-link">About us</a>
   </div>
@@ -55,7 +55,7 @@
   }
 </script>
   <script>
-  document.getElementById('navLinks').addEventListener('click', function (e) {
+  document.getElementById('askArea').addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default anchor jump
     const input = document.getElementById('userInput');
 
